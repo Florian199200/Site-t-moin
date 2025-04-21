@@ -1,0 +1,1221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Linka Lab - Stratégie Digitale pour la Pêche à la Carpe</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #222222;
+            --dark-section: #161616;
+            --header-bg: #0f0f0f;
+            --footer-bg: #0f0f0f;
+            --accent: #c9aa71;
+            --accent-secondary: #5a5a48;
+            --kaki-tint: rgba(90, 90, 72, 0.07);
+            --text-light: #999999;
+            --text-accent: #c9aa71;
+            --white: #ffffff;
+            --dark-gray: #333333;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        body {
+            color: var(--white);
+            background-color: var(--primary);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--header-bg);
+            padding: 2rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.5);
+            border-bottom: 1px solid rgba(201, 170, 113, 0.1);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            text-decoration: none;
+        }
+        
+        .logo-circle {
+            width: 25px;
+            height: 25px;
+            border: 2px solid var(--accent);
+            border-radius: 50%;
+        }
+        
+        .logo-text {
+            color: var(--accent);
+            font-weight: 600;
+            font-size: 1.5rem;
+            letter-spacing: 0px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--white);
+            text-decoration: none;
+            font-weight: 400;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+        
+        .contact-btn {
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white);
+            padding: 0.7rem 1.5rem;
+            border: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-btn {
+            background-color: var(--header-bg);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .contact-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .contact-btn:hover {
+            background-color: rgba(255, 255, 255, 0.05);
+            transform: translateY(-2px);
+        }
+        
+        .contact-btn:hover::before {
+            left: 100%;
+        }
+        
+        .hero {
+            padding: 11rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 30%;
+            height: 100%;
+            background: linear-gradient(135deg, transparent, rgba(201, 170, 113, 0.02));
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            padding-right: 2rem;
+        }
+        
+        .coordinates {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            letter-spacing: 0.5px;
+        }
+        
+        .subtitle {
+            color: var(--accent);
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 400;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+        
+        .subtitle:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 50%;
+            width: 1rem;
+            height: 1px;
+            background-color: var(--accent);
+        }
+        
+        .hero-heading {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 2rem;
+            font-weight: 600;
+        }
+        
+        .hero-heading .highlight {
+            color: var(--accent);
+            font-weight: 500;
+        }
+        
+        .hero-heading .secondary {
+            color: var(--accent);
+        }
+        
+        .hero-description {
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-size: 1rem;
+            line-height: 1.7;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            border: 1px solid var(--white);
+            color: var(--white);
+            padding: 0.8rem 2rem;
+            text-decoration: none;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: left 0.6s ease;
+        }
+        
+        .cta-btn:hover {
+            background-color: var(--white);
+            color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+        
+        .hero-image {
+            position: relative;
+        }
+        
+        .hero-image img {
+            width: 100%;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+        
+        .performance {
+            padding: 5rem 0;
+            background-color: var(--dark-section);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .performance::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg, rgba(74, 74, 58, 0.1) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        
+        .section-title {
+            color: var(--accent);
+            text-transform: uppercase;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-bottom: 3rem;
+            font-weight: 400;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.5rem;
+        }
+        
+        .stat-card {
+            background-color: var(--secondary);
+            padding: 2.5rem 1.5rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(201, 170, 113, 0);
+        }
+        
+        .stat-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent, var(--accent), transparent);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+            border-color: rgba(201, 170, 113, 0.1);
+            background: linear-gradient(135deg, var(--secondary), var(--secondary) 60%, var(--kaki-tint));
+        }
+        
+        .stat-card:hover::before {
+            opacity: 1;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .stat-label {
+            color: var(--text-light);
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.5;
+        }
+        
+        .process {
+            padding: 6rem 0;
+            background-color: var(--primary);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-timeline {
+            position: absolute;
+            top: 300px;
+            bottom: 100px;
+            left: 50%;
+            width: 2px;
+            background-color: rgba(201, 170, 113, 0.3);
+            z-index: 1;
+            transform: translateX(-50%);
+        }
+        
+        .timeline-progress {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 0;
+            background-color: var(--accent);
+            transition: height 1.5s ease;
+            box-shadow: 0 0 10px rgba(201, 170, 113, 0.5);
+        }
+        
+        .process-header {
+            margin-bottom: 4rem;
+            text-align: center;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .process-id {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .process-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .process-subtitle {
+            color: var(--text-light);
+            font-size: 1.2rem;
+        }
+        
+        .process-steps {
+            position: relative;
+            z-index: 2;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .step-wrapper {
+            display: flex;
+            margin-bottom: 80px;
+            align-items: flex-start;
+            width: 100%;
+        }
+        
+        .step-wrapper:last-child {
+            margin-bottom: 0;
+        }
+        
+        .step-wrapper:nth-child(odd) {
+            flex-direction: row-reverse;
+        }
+        
+        .step-content {
+            width: 45%;
+        }
+        
+        .step-node {
+            width: 10%;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding-top: 30px;
+        }
+        
+        .step-node-inner {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background-color: var(--accent);
+            position: relative;
+            z-index: 3;
+            opacity: 0;
+            transform: scale(0);
+            transition: transform 0.4s ease, opacity 0.4s ease;
+            box-shadow: 0 0 0 0 rgba(201, 170, 113, 0.5);
+        }
+        
+        .step-node-inner.animate {
+            opacity: 1;
+            transform: scale(1);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(201, 170, 113, 0.5);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(201, 170, 113, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(201, 170, 113, 0);
+            }
+        }
+        
+        .process-step {
+            background-color: var(--secondary);
+            padding: 2.5rem;
+            border-radius: 12px;
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.6s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(201, 170, 113, 0);
+            position: relative;
+        }
+        
+        .process-step::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 30%;
+            height: 40%;
+            background: linear-gradient(135deg, transparent, var(--kaki-tint));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            border-radius: 0 0 12px 0;
+        }
+        
+        .step-wrapper:nth-child(odd) .process-step {
+            transform: translateX(-50px);
+        }
+        
+        .step-wrapper:nth-child(odd) .process-step::after {
+            right: auto;
+            left: 0;
+            background: linear-gradient(225deg, transparent, var(--kaki-tint));
+            border-radius: 0 0 0 12px;
+        }
+        
+        .process-step.animate {
+            opacity: 1;
+            transform: translateX(0);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            border-color: rgba(201, 170, 113, 0.05);
+        }
+        
+        .process-step:hover {
+            border-color: rgba(201, 170, 113, 0.15);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .process-step:hover::after {
+            opacity: 1;
+        }
+        
+        .step-number {
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .step-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .step-list {
+            list-style-type: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .step-list li {
+            color: var(--text-light);
+            margin-bottom: 0.7rem;
+            position: relative;
+            padding-left: 1.2rem;
+            font-size: 0.95rem;
+        }
+        
+        .step-list li:before {
+            content: "•";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+        }
+        
+        .step-duration {
+            color: var(--text-light);
+            font-style: italic;
+            font-size: 0.9rem;
+        }
+        
+        .cta-section {
+            padding: 6rem 0;
+            background-color: var(--dark-section);
+            text-align: center;
+            border-radius: 0 0 12px 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, transparent, var(--accent-secondary), transparent);
+            opacity: 0.5;
+        }
+        
+        .object-id {
+            color: var(--accent);
+            font-size: 0.9rem;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-title {
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+        
+        .cta-description {
+            color: var(--text-light);
+            margin-bottom: 2.5rem;
+            font-size: 1.1rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            letter-spacing: 0.5px;
+        }
+        
+        footer {
+            padding: 4rem 0;
+            background-color: var(--footer-bg);
+            border-top: 1px solid rgba(74, 74, 58, 0.3);
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+        }
+        
+        .footer-description {
+            color: var(--text-light);
+            margin-bottom: 2rem;
+            font-size: 0.95rem;
+        }
+        
+        .footer-title {
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .contact-list {
+            list-style-type: none;
+        }
+        
+        .contact-list li {
+            color: var(--text-light);
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+        
+        .footer-links {
+            list-style-type: none;
+            display: flex;
+        }
+        
+        .footer-links li {
+            margin-right: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+            letter-spacing: 0.5px;
+        }
+        
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+        
+        .footer-bottom {
+            margin-top: 3rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 1200px) {
+            .container {
+                width: 95%;
+            }
+        }
+        
+        @media (max-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .hero-heading {
+                font-size: 2.8rem;
+            }
+            
+            .step-wrapper {
+                flex-direction: column !important;
+                align-items: center;
+            }
+            
+            .step-content {
+                width: 90%;
+                max-width: 500px;
+            }
+            
+            .step-node {
+                margin: 20px 0;
+                padding-top: 0;
+            }
+            
+            .process-timeline {
+                left: 50%;
+                top: 450px;
+                transform: translateX(-50%);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+            }
+            
+            .hero-image {
+                margin-top: 2rem;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .nav-links li {
+                margin-left: 1.5rem;
+            }
+            
+            .contact-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.8rem;
+            }
+            
+            .process-timeline {
+                top: 400px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+            
+            .contact-btn {
+                display: none;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hero-heading {
+                font-size: 2rem;
+            }
+            
+            .step-content {
+                width: 100%;
+            }
+            
+            .process-step {
+                padding: 1.8rem;
+            }
+            
+            .process-timeline {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 375px) {
+            /* iPhone SE and similar small devices */
+            .hero-heading {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .hero-description {
+                font-size: 0.9rem;
+            }
+            
+            .cta-btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .stat-number {
+                font-size: 2rem;
+            }
+            
+            .stat-label {
+                font-size: 0.75rem;
+            }
+            
+            .process-title {
+                font-size: 1.7rem;
+            }
+            
+            .process-subtitle {
+                font-size: 1rem;
+            }
+            
+            .step-title {
+                font-size: 1.1rem;
+            }
+            
+            .step-description {
+                font-size: 0.9rem;
+            }
+            
+            .process-step {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="subtle-accent"></div>
+    <header>
+        <div class="container">
+            <nav>
+                <a href="#" class="logo">
+                    <div class="logo-circle"></div>
+                    <div class="logo-text">LINKA LAB</div>
+                </a>
+                <ul class="nav-links">
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#about">À propos</a></li>
+                </ul>
+                <button class="contact-btn btn-glow">Contact</button>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="mobile-menu">
+        <ul>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#about">À propos</a></li>
+            <li><a href="#cta">Contact</a></li>
+        </ul>
+    </div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="subtitle">Stratégie digitale spécialisée</div>
+                    <h1 class="hero-heading">
+                        Convertissez les <span class="highlight">passionnés</span> en clients <span class="secondary">fidèles</span>
+                    </h1>
+                    <p class="hero-description">
+                        Nous transformons la présence digitale des marques de pêche à la carpe avec des stratégies éprouvées qui captent l'attention, génèrent du trafic qualifié et augmentent les conversions.
+                    </p>
+                    <a href="#services" class="cta-btn btn-glow">Découvrir nos services</a>
+                </div>
+                <div class="hero-image">
+                    <img src="/api/placeholder/600/450" alt="Carpe avec graphique de croissance">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="performance">
+        <div class="container">
+            <h2 class="section-title">Performance</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">+50%</div>
+                    <div class="stat-label">
+                        Augmentation moyenne du chiffre d'affaires de nos clients
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+50%</div>
+                    <div class="stat-label">
+                        Croissance du trafic qualifié sur les sites e-commerce
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+70%</div>
+                    <div class="stat-label">
+                        Engagement social media dans les 6 premiers mois
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">+80%</div>
+                    <div class="stat-label">
+                        Amélioration du taux de conversion moyen
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="process">
+        <div class="process-timeline">
+            <div class="timeline-progress"></div>
+        </div>
+        <div class="container">
+            <div class="process-header">
+                <h2 class="process-title">Notre méthodologie</h2>
+                <p class="process-subtitle">Processus tactique pour des résultats prévisibles</p>
+            </div>
+            <div class="process-steps">
+                <div class="step-wrapper">
+                    <div class="step-content">
+                        <div class="process-step">
+                            <div class="step-number">01</div>
+                            <h3 class="step-title">Analyse & Reconnaissance</h3>
+                            <p class="step-description">
+                                Nous cartographions votre écosystème actuel, analysons vos concurrents et identifions les opportunités de croissance inexploitées dans votre secteur spécifique.
+                            </p>
+                            <ul class="step-list">
+                                <li>Audit complet de votre présence digitale</li>
+                                <li>Analyse concurrentielle approfondie</li>
+                                <li>Identification des opportunités de marché</li>
+                            </ul>
+                            <div class="step-duration">Durée moyenne: 2 semaines</div>
+                        </div>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-node-inner"></div>
+                    </div>
+                </div>
+                
+                <div class="step-wrapper">
+                    <div class="step-content">
+                        <div class="process-step">
+                            <div class="step-number">02</div>
+                            <h3 class="step-title">Planification Stratégique</h3>
+                            <p class="step-description">
+                                Nous élaborons une feuille de route tactique alignée avec vos objectifs commerciaux, en établissant des KPIs précis pour mesurer chaque avancée.
+                            </p>
+                            <ul class="step-list">
+                                <li>Définition des objectifs SMART</li>
+                                <li>Élaboration des stratégies d'acquisition</li>
+                                <li>Création d'un calendrier d'exécution</li>
+                            </ul>
+                            <div class="step-duration">Durée moyenne: 10 jours</div>
+                        </div>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-node-inner"></div>
+                    </div>
+                </div>
+                
+                <div class="step-wrapper">
+                    <div class="step-content">
+                        <div class="process-step">
+                            <div class="step-number">03</div>
+                            <h3 class="step-title">Déploiement Tactique</h3>
+                            <p class="step-description">
+                                Nous mettons en œuvre votre stratégie digitale avec une exécution rigoureuse et une attention aux détails qui fait la différence face à vos concurrents.
+                            </p>
+                            <ul class="step-list">
+                                <li>Mise en place des optimisations techniques</li>
+                                <li>Création et déploiement des contenus</li>
+                                <li>Lancement des campagnes d'acquisition</li>
+                            </ul>
+                            <div class="step-duration">Durée moyenne: 4 semaines</div>
+                        </div>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-node-inner"></div>
+                    </div>
+                </div>
+                
+                <div class="step-wrapper">
+                    <div class="step-content">
+                        <div class="process-step">
+                            <div class="step-number">04</div>
+                            <h3 class="step-title">Optimisation Continue</h3>
+                            <p class="step-description">
+                                Nous analysons méthodiquement les données de performance pour ajuster la stratégie et maximiser constamment votre retour sur investissement.
+                            </p>
+                            <ul class="step-list">
+                                <li>Suivi hebdomadaire des KPIs</li>
+                                <li>Optimisation basée sur les données</li>
+                                <li>Rapports mensuels d'avancement</li>
+                                <li>Amélioration continue des campagnes</li>
+                            </ul>
+                            <div class="step-duration">Processus continu à long terme</div>
+                        </div>
+                    </div>
+                    <div class="step-node">
+                        <div class="step-node-inner"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta-section">
+        <div class="container">
+            <h2 class="section-title">Passez à l'action</h2>
+            <p class="cta-description">
+                Prêt à augmenter significativement vos résultats? Prenons rendez-vous pour discuter de votre situation actuelle et identifier les opportunités de croissance pour votre marque dans l'univers de la pêche à la carpe.
+            </p>
+            <a href="#" class="cta-btn btn-glow">Demander un audit stratégique</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <a href="#" class="logo">
+                        <div class="logo-circle"></div>
+                        <div class="logo-text">LINKA LAB</div>
+                    </a>
+                    <p class="footer-description">
+                        Votre entreprise, une référence dans son domaine avec des solutions innovantes et personnalisées.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Contact</h3>
+                    <ul class="contact-list">
+                        <li>+33 1 23 45 67 89</li>
+                        <li>contact@entreprise.com</li>
+                        <li>Paris, France</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3 class="footer-title">Liens utiles</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Politique de confidentialité</a></li>
+                        <li><a href="#">Mentions légales</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>© 2025 Linka Lab. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        // Animation for process steps
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all process elements
+            const processSteps = document.querySelectorAll('.process-step');
+            const stepNodes = document.querySelectorAll('.step-node-inner');
+            const timelineProgress = document.querySelector('.timeline-progress');
+            
+            // Function to check if element is in viewport
+            function isElementInViewport(el) {
+                const rect = el.getBoundingClientRect();
+                return (
+                    rect.top <= (window.innerHeight || document.documentElement.clientHeight) * 0.8 &&
+                    rect.bottom >= 0
+                );
+            }
+            
+            // Function to handle animations
+            function handleScrollAnimations() {
+                // Animate process steps and nodes when in viewport
+                processSteps.forEach((step, index) => {
+                    if (isElementInViewport(step)) {
+                        setTimeout(() => {
+                            step.classList.add('animate');
+                            stepNodes[index].classList.add('animate');
+                        }, index * 200);
+                    }
+                });
+                
+                // Update timeline progress based on scroll position
+                const processSection = document.querySelector('.process');
+                const processSectionHeight = processSection.offsetHeight;
+                const processSectionTop = processSection.getBoundingClientRect().top;
+                const scrollPercentage = Math.min(
+                    Math.max(
+                        (-processSectionTop) / (processSectionHeight - window.innerHeight) * 100,
+                        0
+                    ),
+                    100
+                );
+                
+                if (timelineProgress && scrollPercentage > 0) {
+                    timelineProgress.style.height = `${scrollPercentage}%`;
+                }
+            }
+            
+            // Initial check
+            handleScrollAnimations();
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', handleScrollAnimations);
+            
+            // Handle hamburger menu
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                
+                // Toggle hamburger icon animation
+                const spans = this.querySelectorAll('span');
+                if (this.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    
+                    // Reset hamburger icon
+                    const spans = hamburger.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+            
+            // Handle responsive navigation
+            const contactBtn = document.querySelector('.contact-btn');
+            contactBtn.addEventListener('click', function() {
+                // Scroll to CTA section when contact button is clicked
+                document.querySelector('.cta-section').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            });
+            
+            // Add hover effect to stat cards
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Check browser capabilities and disable animations if needed
+            function checkReducedMotion() {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) {
+                    document.body.classList.add('reduced-motion');
+                    
+                    // Make all animations instant for accessibility
+                    processSteps.forEach(step => {
+                        step.style.transition = 'none';
+                        step.classList.add('animate');
+                    });
+                    
+                    stepNodes.forEach(node => {
+                        node.style.transition = 'none';
+                        node.classList.add('animate');
+                    });
+                    
+                    if (timelineProgress) {
+                        timelineProgress.style.transition = 'none';
+                        timelineProgress.style.height = '100%';
+                    }
+                }
+            }
+            
+            // Run accessibility check
+            checkReducedMotion();
+            
+            // Ensure timeline is centered
+            window.addEventListener('resize', function() {
+                const timeline = document.querySelector('.process-timeline');
+                if (timeline) {
+                    const processSection = document.querySelector('.process');
+                    const processSectionHeight = processSection.offsetHeight;
+                    timeline.style.height = (processSectionHeight * 0.7) + 'px';
+                }
+            });
+            
+            // Initial setup for timeline
+            const timeline = document.querySelector('.process-timeline');
+            if (timeline) {
+                const processSection = document.querySelector('.process');
+                const processSectionHeight = processSection.offsetHeight;
+                timeline.style.height = (processSectionHeight * 0.7) + 'px';
+            }
+        });
+    </script>
+</body>
+</html> 
