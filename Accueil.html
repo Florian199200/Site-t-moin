@@ -697,25 +697,30 @@
                 font-size: 2.8rem;
             }
             
-            .step-wrapper {
-                flex-direction: column !important;
-                align-items: center;
-            }
-            
             .step-content {
-                width: 90%;
-                max-width: 500px;
+                width: 85%;
+                float: none !important;
+                margin: 0 auto;
+                text-align: left !important;
+                padding-left: 0 !important;
+                padding-right: 0 !important;
             }
             
             .step-node {
+                position: relative;
+                left: 50%;
+                top: 0;
                 margin: 20px 0;
-                padding-top: 0;
+            }
+            
+            .step:nth-child(odd) .process-step,
+            .step:nth-child(even) .process-step {
+                transform: translateY(20px);
             }
             
             .process-timeline {
                 left: 50%;
-                top: 450px;
-                transform: translateX(-50%);
+                height: 85%;
             }
         }
         
@@ -918,97 +923,93 @@
     </section>
 
     <section id="process" class="process">
-        <div class="process-timeline">
-            <div class="timeline-progress"></div>
-        </div>
         <div class="container">
             <div class="process-header">
                 <h2 class="process-title">Notre méthodologie</h2>
                 <p class="process-subtitle">Processus tactique pour des résultats prévisibles</p>
             </div>
-            <div class="process-steps">
-                <div class="step-wrapper">
-                    <div class="step-content">
-                        <div class="process-step">
-                            <div class="step-number">01</div>
-                            <h3 class="step-title">Analyse & Reconnaissance</h3>
-                            <p class="step-description">
-                                Nous cartographions votre écosystème actuel, analysons vos concurrents et identifions les opportunités de croissance inexploitées dans votre secteur spécifique.
-                            </p>
-                            <ul class="step-list">
-                                <li>Audit complet de votre présence digitale</li>
-                                <li>Analyse concurrentielle approfondie</li>
-                                <li>Identification des opportunités de marché</li>
-                            </ul>
-                            <div class="step-duration">Durée moyenne: 2 semaines</div>
-                        </div>
-                    </div>
-                    <div class="step-node">
-                        <div class="step-node-inner"></div>
-                    </div>
+            
+            <div class="process-container">
+                <div class="process-timeline">
+                    <div class="timeline-progress"></div>
                 </div>
                 
-                <div class="step-wrapper">
-                    <div class="step-content">
-                        <div class="process-step">
-                            <div class="step-number">02</div>
-                            <h3 class="step-title">Planification Stratégique</h3>
-                            <p class="step-description">
-                                Nous élaborons une feuille de route tactique alignée avec vos objectifs commerciaux, en établissant des KPIs précis pour mesurer chaque avancée.
-                            </p>
-                            <ul class="step-list">
-                                <li>Définition des objectifs SMART</li>
-                                <li>Élaboration des stratégies d'acquisition</li>
-                                <li>Création d'un calendrier d'exécution</li>
-                            </ul>
-                            <div class="step-duration">Durée moyenne: 10 jours</div>
+                <div class="process-steps">
+                    <div class="step">
+                        <div class="step-content">
+                            <div class="process-step">
+                                <div class="step-number">01</div>
+                                <h3 class="step-title">Analyse & Reconnaissance</h3>
+                                <p class="step-description">
+                                    Nous cartographions votre écosystème actuel, analysons vos concurrents et identifions les opportunités de croissance inexploitées dans votre secteur spécifique.
+                                </p>
+                                <ul class="step-list">
+                                    <li>Audit complet de votre présence digitale</li>
+                                    <li>Analyse concurrentielle approfondie</li>
+                                    <li>Identification des opportunités de marché</li>
+                                </ul>
+                                <div class="step-duration">Durée moyenne: 2 semaines</div>
+                            </div>
                         </div>
+                        <div class="step-node"></div>
                     </div>
-                    <div class="step-node">
-                        <div class="step-node-inner"></div>
-                    </div>
-                </div>
-                
-                <div class="step-wrapper">
-                    <div class="step-content">
-                        <div class="process-step">
-                            <div class="step-number">03</div>
-                            <h3 class="step-title">Déploiement Tactique</h3>
-                            <p class="step-description">
-                                Nous mettons en œuvre votre stratégie digitale avec une exécution rigoureuse et une attention aux détails qui fait la différence face à vos concurrents.
-                            </p>
-                            <ul class="step-list">
-                                <li>Mise en place des optimisations techniques</li>
-                                <li>Création et déploiement des contenus</li>
-                                <li>Lancement des campagnes d'acquisition</li>
-                            </ul>
-                            <div class="step-duration">Durée moyenne: 4 semaines</div>
+                    
+                    <div class="step">
+                        <div class="step-content">
+                            <div class="process-step">
+                                <div class="step-number">02</div>
+                                <h3 class="step-title">Planification Stratégique</h3>
+                                <p class="step-description">
+                                    Nous élaborons une feuille de route tactique alignée avec vos objectifs commerciaux, en établissant des KPIs précis pour mesurer chaque avancée.
+                                </p>
+                                <ul class="step-list">
+                                    <li>Définition des objectifs SMART</li>
+                                    <li>Élaboration des stratégies d'acquisition</li>
+                                    <li>Création d'un calendrier d'exécution</li>
+                                </ul>
+                                <div class="step-duration">Durée moyenne: 10 jours</div>
+                            </div>
                         </div>
+                        <div class="step-node"></div>
                     </div>
-                    <div class="step-node">
-                        <div class="step-node-inner"></div>
-                    </div>
-                </div>
-                
-                <div class="step-wrapper">
-                    <div class="step-content">
-                        <div class="process-step">
-                            <div class="step-number">04</div>
-                            <h3 class="step-title">Optimisation Continue</h3>
-                            <p class="step-description">
-                                Nous analysons méthodiquement les données de performance pour ajuster la stratégie et maximiser constamment votre retour sur investissement.
-                            </p>
-                            <ul class="step-list">
-                                <li>Suivi hebdomadaire des KPIs</li>
-                                <li>Optimisation basée sur les données</li>
-                                <li>Rapports mensuels d'avancement</li>
-                                <li>Amélioration continue des campagnes</li>
-                            </ul>
-                            <div class="step-duration">Processus continu à long terme</div>
+                    
+                    <div class="step">
+                        <div class="step-content">
+                            <div class="process-step">
+                                <div class="step-number">03</div>
+                                <h3 class="step-title">Déploiement Tactique</h3>
+                                <p class="step-description">
+                                    Nous mettons en œuvre votre stratégie digitale avec une exécution rigoureuse et une attention aux détails qui fait la différence face à vos concurrents.
+                                </p>
+                                <ul class="step-list">
+                                    <li>Mise en place des optimisations techniques</li>
+                                    <li>Création et déploiement des contenus</li>
+                                    <li>Lancement des campagnes d'acquisition</li>
+                                </ul>
+                                <div class="step-duration">Durée moyenne: 4 semaines</div>
+                            </div>
                         </div>
+                        <div class="step-node"></div>
                     </div>
-                    <div class="step-node">
-                        <div class="step-node-inner"></div>
+                    
+                    <div class="step">
+                        <div class="step-content">
+                            <div class="process-step">
+                                <div class="step-number">04</div>
+                                <h3 class="step-title">Optimisation Continue</h3>
+                                <p class="step-description">
+                                    Nous analysons méthodiquement les données de performance pour ajuster la stratégie et maximiser constamment votre retour sur investissement.
+                                </p>
+                                <ul class="step-list">
+                                    <li>Suivi hebdomadaire des KPIs</li>
+                                    <li>Optimisation basée sur les données</li>
+                                    <li>Rapports mensuels d'avancement</li>
+                                    <li>Amélioration continue des campagnes</li>
+                                </ul>
+                                <div class="step-duration">Processus continu à long terme</div>
+                            </div>
+                        </div>
+                        <div class="step-node"></div>
                     </div>
                 </div>
             </div>
@@ -1066,7 +1067,7 @@
         document.addEventListener('DOMContentLoaded', function() {
             // Get all process elements
             const processSteps = document.querySelectorAll('.process-step');
-            const stepNodes = document.querySelectorAll('.step-node-inner');
+            const stepNodes = document.querySelectorAll('.step-node');
             const timelineProgress = document.querySelector('.timeline-progress');
             
             // Function to check if element is in viewport
@@ -1097,6 +1098,119 @@
                 const scrollPercentage = Math.min(
                     Math.max(
                         (-processSectionTop) / (processSectionHeight - window.innerHeight) * 100,
+                        0
+                    ),
+                    100
+                );
+                
+                if (timelineProgress && scrollPercentage > 0) {
+                    timelineProgress.style.height = `${scrollPercentage}%`;
+                }
+            }
+            
+            // Clear floats after steps
+            function addClearfix() {
+                const steps = document.querySelectorAll('.step');
+                steps.forEach(step => {
+                    const clearfix = document.createElement('div');
+                    clearfix.style.clear = 'both';
+                    step.appendChild(clearfix);
+                });
+            }
+            
+            // Initial setup
+            addClearfix();
+            handleScrollAnimations();
+            
+            // Listen for scroll events
+            window.addEventListener('scroll', handleScrollAnimations);
+            
+            // Handle hamburger menu
+            const hamburger = document.querySelector('.hamburger');
+            const mobileMenu = document.querySelector('.mobile-menu');
+            
+            hamburger.addEventListener('click', function() {
+                this.classList.toggle('active');
+                mobileMenu.classList.toggle('active');
+                
+                // Toggle hamburger icon animation
+                const spans = this.querySelectorAll('span');
+                if (this.classList.contains('active')) {
+                    spans[0].style.transform = 'rotate(45deg) translate(5px, 5px)';
+                    spans[1].style.opacity = '0';
+                    spans[2].style.transform = 'rotate(-45deg) translate(7px, -6px)';
+                } else {
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                }
+            });
+            
+            // Close mobile menu when clicking on a link
+            document.querySelectorAll('.mobile-menu a').forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.remove('active');
+                    hamburger.classList.remove('active');
+                    
+                    // Reset hamburger icon
+                    const spans = hamburger.querySelectorAll('span');
+                    spans[0].style.transform = 'none';
+                    spans[1].style.opacity = '1';
+                    spans[2].style.transform = 'none';
+                });
+            });
+            
+            // Handle responsive navigation
+            const contactBtn = document.querySelector('.contact-btn');
+            contactBtn.addEventListener('click', function() {
+                // Scroll to CTA section when contact button is clicked
+                document.querySelector('.cta-section').scrollIntoView({ 
+                    behavior: 'smooth' 
+                });
+            });
+            
+            // Add hover effect to stat cards
+            const statCards = document.querySelectorAll('.stat-card');
+            statCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-5px)';
+                    this.style.boxShadow = '0 10px 20px rgba(0, 0, 0, 0.2)';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateY(0)';
+                    this.style.boxShadow = 'none';
+                });
+            });
+            
+            // Check browser capabilities and disable animations if needed
+            function checkReducedMotion() {
+                const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+                if (prefersReducedMotion) {
+                    document.body.classList.add('reduced-motion');
+                    
+                    // Make all animations instant for accessibility
+                    processSteps.forEach(step => {
+                        step.style.transition = 'none';
+                        step.classList.add('animate');
+                    });
+                    
+                    stepNodes.forEach(node => {
+                        node.style.transition = 'none';
+                        node.classList.add('animate');
+                    });
+                    
+                    if (timelineProgress) {
+                        timelineProgress.style.transition = 'none';
+                        timelineProgress.style.height = '100%';
+                    }
+                }
+            }
+            
+            // Run accessibility check
+            checkReducedMotion();
+        });
+    </script>
                         0
                     ),
                     100
@@ -1218,4 +1332,4 @@
         });
     </script>
 </body>
-</html> 
+</html>
